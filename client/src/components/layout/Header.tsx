@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { HiOutlineSearch, HiOutlineMenu } from "react-icons/hi";
 import { FiPhoneCall, FiUser, FiShoppingCart } from "react-icons/fi";
 import { BiCircle } from "react-icons/bi";
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export function Header() {
   const [location] = useLocation();
@@ -61,19 +60,26 @@ export function Header() {
   ];
 
   return (
-    <header className={`bg-white w-full z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0 shadow-md header-sticky' : ''}`}>
+    <header
+      className={`bg-white w-full z-50 transition-all duration-300 ${
+        isScrolled ? "fixed top-0 shadow-md header-sticky" : ""
+      }`}
+    >
       {/* Top header */}
-      <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto container-padding py-3 flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center w-full md:w-auto">
-          <button 
+          <button
             className="md:hidden mr-4 text-gray-700"
             onClick={toggleMenu}
             aria-label="Menu"
           >
             <HiOutlineMenu size={24} />
           </button>
-          
-          <Link href="/" className="block transform hover:scale-105 transition-transform">
+
+          <Link
+            href="/"
+            className="block transform hover:scale-105 transition-transform"
+          >
             <div className="flex items-center">
               <span className="font-bold text-2xl text-black">
                 <span>G</span>
@@ -84,8 +90,11 @@ export function Header() {
               </span>
             </div>
           </Link>
-          
-          <form onSubmit={handleSearch} className="relative ml-6 w-full max-w-md">
+
+          <form
+            onSubmit={handleSearch}
+            className="relative ml-6 w-full max-w-md"
+          >
             <Input
               type="text"
               placeholder="Tìm theo tên"
@@ -93,7 +102,7 @@ export function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <Button 
+            <Button
               type="submit"
               className="absolute right-0 top-0 h-full bg-yellow-400 hover:bg-yellow-500 px-3 rounded-r-lg text-black transition-colors"
             >
@@ -101,19 +110,24 @@ export function Header() {
             </Button>
           </form>
         </div>
-        
-        <div className="flex items-center mt-4 md:mt-0 gap-6">
+
+        <div className="flex items-center mt-4 md:mt-0 gap-6 px-4">
           <a href="tel:0971411122" className="flex items-center group">
             <div className="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] rounded-full text-[#e52629] group-hover:bg-[#ffe8e8] transition-colors">
               <FiPhoneCall className="text-[#e52629]" size={20} />
             </div>
             <div className="ml-2">
               <div className="text-xs text-gray-600">Hỗ trợ khách hàng</div>
-              <div className="text-[#e52629] font-bold text-sm">0971 411 122</div>
+              <div className="text-[#e52629] font-bold text-sm">
+                0971 411 122
+              </div>
             </div>
           </a>
-          
-          <Link href={isLoggedIn ? "/account" : "/login"} className="flex items-center group">
+
+          <Link
+            href={isLoggedIn ? "/account" : "/login"}
+            className="flex items-center group"
+          >
             <div className="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] rounded-full group-hover:bg-[#ffe8e8] transition-colors">
               <FiUser className="text-[#e52629]" size={20} />
             </div>
@@ -122,11 +136,13 @@ export function Header() {
               <div className="text-sm">Đăng nhập</div>
             </div>
           </Link>
-          
+
           <Link href="/cart" className="flex items-center relative group">
             <div className="w-10 h-10 flex items-center justify-center bg-[#f6f6f6] rounded-full group-hover:bg-[#ffe8e8] transition-colors">
               <FiShoppingCart className="text-[#e52629]" size={20} />
-              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#e52629] text-white rounded-full flex items-center justify-center text-xs font-bold">0</span>
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-[#e52629] text-white rounded-full flex items-center justify-center text-xs font-bold">
+                0
+              </span>
             </div>
             <div className="ml-2">
               <div className="text-xs text-gray-600">Giỏ hàng</div>
@@ -135,45 +151,43 @@ export function Header() {
           </Link>
         </div>
       </div>
-      
+
       {/* Main navigation */}
       <div className="bg-[#e52629] border-b border-[#e52629]/20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto container-padding">
           <div className="flex items-center">
             <div className="relative group">
-              <button 
-                className="flex items-center text-white py-3 px-4 cursor-pointer hover:bg-[#c81f22] transition-colors"
+              <button
+                className="nav-link flex items-center text-white py-3 px-4 cursor-pointer transition-colors"
                 onMouseEnter={() => setHoveredCategory("main")}
                 onMouseLeave={() => setHoveredCategory(null)}
               >
                 <HiOutlineMenu className="mr-2" size={20} />
                 <span className="font-medium text-sm">Danh mục sản phẩm</span>
               </button>
-              
-              <div 
-                className={`absolute left-0 top-full w-64 bg-white shadow-lg z-30 ${hoveredCategory === "main" ? "block" : "hidden"}`}
+
+              <div
+                className={`absolute left-0 top-full w-64 bg-white shadow-lg z-30 ${
+                  hoveredCategory === "main" ? "block" : "hidden"
+                }`}
                 onMouseEnter={() => setHoveredCategory("main")}
                 onMouseLeave={() => setHoveredCategory(null)}
               >
                 {productCategories.map((category) => (
-                  <Link 
+                  <Link
                     key={category.id}
-                    href={`/products/${category.id}`} 
-                    className="block px-4 py-2 hover:bg-gray-100 text-sm border-b hover:text-[#e52629] transition-colors"
+                    href={`/products/${category.id}`}
+                    className="block px-4 py-2 text-sm border-b text-gray-700 hover:text-[#e52629] transition-colors"
                   >
                     {category.name}
                   </Link>
                 ))}
               </div>
             </div>
-            
-            <div className="hidden md:flex overflow-x-auto whitespace-nowrap py-3 flex-1 text-white justify-between">
+
+            <div className="hidden md:flex overflow-x-auto whitespace-nowrap py-3 flex-1 text-white justify-start gap-8 px-4">
               {headerLinks.map((link) => (
-                <Link 
-                  key={link.id}
-                  href={`/${link.id}`} 
-                  className="inline-flex items-center px-3 py-1 hover:bg-[#c81f22] transition-colors"
-                >
+                <Link key={link.id} href={`/${link.id}`} className="nav-link">
                   <span className="text-sm font-medium">{link.name}</span>
                 </Link>
               ))}
@@ -181,19 +195,21 @@ export function Header() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile menu with animation */}
-      <div 
+      <div
         className={`md:hidden bg-white shadow-lg absolute w-full z-40 overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="p-4">
-          <div className="font-bold text-lg mb-2 text-[#e52629]">Danh mục sản phẩm</div>
+          <div className="font-bold text-lg mb-2 text-[#e52629]">
+            Danh mục sản phẩm
+          </div>
           {productCategories.map((category, index) => (
-            <Link 
+            <Link
               key={category.id}
-              href={`/products/${category.id}`} 
+              href={`/products/${category.id}`}
               className="flex items-center py-2 border-b hover:text-[#e52629] transition-colors"
               style={{ animationDelay: `${index * 50}ms` }}
             >
@@ -202,22 +218,6 @@ export function Header() {
             </Link>
           ))}
         </div>
-      </div>
-      
-      {/* Slider nav controls - floating on sides */}
-      <div className="hidden md:block">
-        <button 
-          className="fixed left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-[#e52629] shadow-md hover:bg-white transition-colors z-40"
-          aria-label="Previous"
-        >
-          <MdOutlineKeyboardArrowLeft size={24} />
-        </button>
-        <button 
-          className="fixed right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full flex items-center justify-center text-[#e52629] shadow-md hover:bg-white transition-colors z-40"
-          aria-label="Next"
-        >
-          <MdOutlineKeyboardArrowRight size={24} />
-        </button>
       </div>
     </header>
   );
