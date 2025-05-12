@@ -10,6 +10,10 @@ import Register from "@/pages/register";
 import Home from "@/pages/home";
 import Account from "@/pages/account";
 import Products from "@/pages/products";
+import ChinhSachBaoHanh from "@/pages/chinh-sach-bao-hanh";
+import HeThongCuaHang from "@/pages/he-thong-cua-hang";
+import HuongDanSuDung from "@/pages/huong-dan-su-dung";
+import ChinhSachThanhVien from "@/pages/chinh-sach-thanh-vien";
 
 function Router() {
   return (
@@ -21,6 +25,10 @@ function Router() {
       <Route path="/account/:tab" component={Account} />
       <Route path="/products" component={Products} />
       <Route path="/products/:category" component={Products} />
+      <Route path="/chinh-sach-bao-hanh" component={ChinhSachBaoHanh} />
+      <Route path="/he-thong-cua-hang" component={HeThongCuaHang} />
+      <Route path="/huong-dan-su-dung" component={HuongDanSuDung} />
+      <Route path="/chinh-sach-thanh-vien" component={ChinhSachThanhVien} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -30,10 +38,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Layout>
-          <Router />
-        </Layout>
         <Toaster />
+        <Router />
       </TooltipProvider>
     </QueryClientProvider>
   );
