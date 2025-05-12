@@ -61,7 +61,7 @@ export function Header() {
   ];
 
   return (
-    <header className={`bg-white w-full z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0 shadow-md' : ''}`}>
+    <header className={`bg-white w-full z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0 shadow-md header-sticky' : ''}`}>
       {/* Top header */}
       <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center w-full md:w-auto">

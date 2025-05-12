@@ -45,6 +45,64 @@ export default function Home() {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
   
+  const thoiTrangNamNuProducts = [
+    {
+      id: 1,
+      name: "Áo thun đôi kết hợp _ Gavani Akh Vitamin C",
+      price: 298000,
+      originalPrice: 598000,
+      discount: "-50%",
+      rating: 5,
+      sales: 83,
+      image: "https://gavani.vn/images/galleries/9e83d94a-1a59-4772-a18b-fa4b6fc626ba/ao_thun_doi__gavani_akh_vitamin_c_1_800x800.jpg",
+      colors: ["gray-200", "pink-300", "gray-700"]
+    },
+    {
+      id: 2,
+      name: "Áo khoác ĐÔI, áo hoodie dù, áo khoác dù hoa Stand-up collar",
+      price: 598000,
+      originalPrice: 978000,
+      discount: "-39%",
+      rating: 5,
+      sales: 30,
+      image: "https://gavani.vn/images/galleries/0fb91c90-16d2-44ab-a86a-1bbaef34ac13/ao_khoac_doi_ao_khoac_du_ao_hoodie_du_1_800x800.jpg",
+      colors: ["blue-600", "gray-200", "yellow-200"]
+    },
+    {
+      id: 3,
+      name: "Áo thun đôi _ Gavani Akh King to the earth",
+      price: 298000,
+      originalPrice: 598000,
+      discount: "-50%",
+      rating: 5,
+      sales: 47,
+      image: "https://gavani.vn/images/galleries/92f3ccd2-6dcc-4fe2-9f14-be3972dfa6da/ao_thun_doi__gavani_akh_king_to_the_earth_1_800x800.jpg",
+      colors: ["black", "purple-400", "pink-300", "gray-200"]
+    },
+    {
+      id: 4,
+      name: "Áo khoác ĐÔI, áo khoác dù _ Gavani hoa Gentle",
+      price: 598000,
+      originalPrice: 978000,
+      discount: "-39%",
+      rating: 5,
+      sales: 40,
+      image: "https://gavani.vn/images/galleries/c0ba2d15-8be7-4a28-b3cc-1a10c14b2d85/ao_khoac_doi_ao_khoac_du_ao_hoodie_du_2_800x800.jpg",
+      colors: ["black", "teal-300", "gray-200"]
+    },
+    {
+      id: 5,
+      name: "Áo polo đôi dành cho couple _ Gavani Pol Say Hi",
+      price: 298000,
+      originalPrice: 698000,
+      discount: "-57%",
+      rating: 5,
+      sales: 10,
+      image: "https://gavani.vn/images/galleries/d45ef9b6-1a7d-4c54-b4ad-13b7c0eba4bc/ao_polo_doi_danh_cho_couple__gavani_pol_say_hi_1_800x800.jpg",
+      colors: ["gray-200", "black", "gray-700"]
+    }
+  ];
+  
   return (
     <div className="container mx-auto px-4 py-0">
       {/* Main Hero Slider */}
@@ -95,91 +153,45 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Product Categories Circular Icons */}
-      <h2 className={`text-xl font-bold my-4 text-center sm:text-left uppercase ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.1s'}}>
-        DANH MỤC SẢN PHẨM
-      </h2>
-      
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
-        {[
-          { path: "/products/ao-khoac-nu", img: "ao_khoac_nu.png", name: "ÁO KHOÁC NỮ" },
-          { path: "/products/ao-khoac-nam", img: "ao_khoac_nam.png", name: "ÁO KHOÁC NAM" },
-          { path: "/products/ao-khoac-doi", img: "ao_khoac_doi.png", name: "ÁO KHOÁC ĐÔI" },
-          { path: "/products/ao-thun-nu", img: "ao_thun_nu.png", name: "ÁO THUN NỮ" },
-          { path: "/products/ao-thun-nam", img: "ao_thun_nam.png", name: "ÁO THUN NAM" },
-          { path: "/products/ao-thun-doi", img: "ao_thun_doi.png", name: "ÁO THUN ĐÔI" },
-          { path: "/products/ao-thun-polo-nu", img: "ao_polo_nu.png", name: "ÁO THUN POLO NỮ" },
-          { path: "/products/ao-polo-nam", img: "ao_polo_nam.png", name: "ÁO POLO NAM" },
-          { path: "/products/ao-polo-doi", img: "ao_polo_doi.png", name: "ÁO POLO ĐÔI" },
-        ].map((item, index) => (
-          <Link 
-            key={index}
-            href={item.path} 
-            className={`text-center stagger-item hover-lift ${isLoaded ? 'fade-in-up' : 'opacity-0'}`}
-          >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#e8793b] flex items-center justify-center mx-auto overflow-hidden">
-              <img 
-                src={`https://gavani.vn/images/2023/06/${item.img}`} 
-                alt={item.name} 
-                className="w-14 h-14 sm:w-16 sm:h-16"
-              />
-            </div>
-            <p className="text-xs mt-2">{item.name}</p>
-          </Link>
-        ))}
-      </div>
-      
-      {/* Store System Banner */}
-      <div className={`w-full h-56 sm:h-80 mb-8 relative rounded-lg overflow-hidden ${isLoaded ? 'scale-in' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
-        <img 
-          src="https://gavani.vn/images/2023/06/he_thong_cua_hang_gavani_1.jpg" 
-          alt="Hệ thống cửa hàng GAVANI" 
-          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-2">HỆ THỐNG CỬA HÀNG GAVANI</h2>
-          <div className="flex gap-2 items-center mt-4">
-            <span className="text-sm">&lt;&lt;&lt;</span>
-            <Link href="/he-thong-cua-hang">
-              <Button 
-                variant="outline" 
-                className="bg-transparent text-white border-white hover:bg-white hover:text-black button-press"
-              >
-                XEM NGAY
+      {/* Các kênh quảng cáo */}
+      <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.1s'}}>
+        <div className="relative h-60 overflow-hidden rounded-md hover-lift">
+          <img 
+            src="https://gavani.vn/images/cms/polo-thun-ca-sau-may-min.jpg" 
+            alt="Áo polo thun cá sấu" 
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-black/40 to-transparent">
+            <h3 className="text-white font-bold text-2xl mb-2">ÁO POLO THUN CÁ SẤU</h3>
+            <p className="text-white uppercase mb-4">MỀM MỊN - CO GIÃN - THOÁNG MÁT</p>
+            <Link href="/products/ao-polo">
+              <Button className="bg-[#e52629] text-white hover:bg-[#c81f22] rounded-none w-32 button-press">
+                XEM TẤT CẢ
               </Button>
             </Link>
-            <span className="text-sm">&gt;&gt;&gt;</span>
+          </div>
+        </div>
+        
+        <div className="relative h-60 overflow-hidden rounded-md hover-lift">
+          <img 
+            src="https://gavani.vn/images/cms/ao-thun-cotton-may-min.jpg" 
+            alt="Áo thun cotton" 
+            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-black/40 to-transparent">
+            <h3 className="text-white font-bold text-2xl mb-2">ÁO THUN COTTON</h3>
+            <p className="text-white uppercase mb-4">MỀM MỊN - CO GIÃN - THOÁNG MÁT</p>
+            <Link href="/products/ao-thun">
+              <Button className="bg-[#e52629] text-white hover:bg-[#c81f22] rounded-none w-32 button-press">
+                XEM TẤT CẢ
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
       
-      {/* Online Channels */}
-      <h2 className={`text-xl font-bold mb-6 uppercase ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.4s'}}>
-        CÁC KÊNH ONLINE GAVANI
-      </h2>
-      <div className="flex flex-wrap justify-center md:justify-between gap-8 mb-12">
-        {[
-          { href: "https://shopee.vn/gavani.vn", icon: <SiShopee className="w-full h-full text-[#ee4d2d]" /> },
-          { href: "https://www.lazada.vn/shop/gavani", icon: <FaLaptopCode className="w-full h-full text-[#0f146c]" /> },
-          { href: "https://www.facebook.com/gavani.vn", icon: <FaFacebookF className="w-3/4 h-3/4 text-[#1877f2]" /> },
-          { href: "https://www.tiktok.com/@gavani.vn", icon: <FaTiktok className="w-3/4 h-3/4 text-black" /> },
-        ].map((item, index) => (
-          <Link 
-            key={index}
-            href={item.href} 
-            target="_blank" 
-            className={`flex items-center justify-center stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`}
-            style={{animationDelay: `${0.5 + 0.1 * index}s`}}
-          >
-            <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center hover-scale">
-              {item.icon}
-            </div>
-          </Link>
-        ))}
-      </div>
-      
       {/* Deal Section with Promo Banner */}
-      <div className={`mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
+      <div className={`mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.3s'}}>
         <div className="bg-[#e52629] text-white py-4 px-6 rounded-t-md">
           <h2 className="text-xl font-bold">DEAL HỜI GIÁ TỐT</h2>
         </div>
@@ -220,9 +232,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-thun/ao-thun-nam-basic">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -281,9 +295,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-thun/ao-thun-nu-form-rong">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -333,9 +349,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-thun/ao-thun-nam-cotton">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -386,9 +404,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-thun/ao-thun-nu-cotton">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -439,9 +459,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-khoac/ao-khoac-doi-nu">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -488,7 +510,7 @@ export default function Home() {
       </div>
       
       {/* ÁO KHOÁC GAVANI Section */}
-      <div className={`mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.7s'}}>
+      <div className={`mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.5s'}}>
         <h2 className="text-xl font-bold my-4 uppercase">ÁO KHOÁC GAVANI</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -522,7 +544,7 @@ export default function Home() {
           {/* Products 3 Column Grid */}
           <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Product 1 */}
-            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '0.8s'}}>
+            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '0.6s'}}>
               {/* Discount Badge */}
               <div className="absolute top-2 left-2 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center z-10 text-sm font-bold pulse">-35%</div>
               
@@ -541,9 +563,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-khoac/ao-khoac-nu-uv">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -577,7 +601,7 @@ export default function Home() {
             </div>
             
             {/* Product 2 */}
-            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '0.9s'}}>
+            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '0.7s'}}>
               {/* Discount Badge */}
               <div className="absolute top-2 left-2 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center z-10 text-sm font-bold pulse">-35%</div>
               
@@ -596,9 +620,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-khoac/ao-khoac-nu-uv-sun-safety">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -632,7 +658,7 @@ export default function Home() {
             </div>
             
             {/* Product 3 */}
-            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '1s'}}>
+            <div className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`} style={{animationDelay: '0.8s'}}>
               {/* Discount Badge */}
               <div className="absolute top-2 left-2 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center z-10 text-sm font-bold pulse">-35%</div>
               
@@ -651,9 +677,11 @@ export default function Home() {
                 
                 {/* Add to Cart Button */}
                 <div className="absolute right-2 bottom-2">
-                  <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
-                    <FiShoppingBag size={18} />
-                  </button>
+                  <Link href="/products/ao-khoac/ao-khoac-nam-uv">
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
                 </div>
               </div>
               
@@ -700,41 +728,175 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Promo Banner Section */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '1.1s'}}>
-        <div className="relative h-60 overflow-hidden rounded-md hover-lift">
-          <img 
-            src="https://gavani.vn/images/cms/polo-thun-ca-sau-may-min.jpg" 
-            alt="Áo polo thun cá sấu" 
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-          <div className="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-black/40 to-transparent">
-            <h3 className="text-white font-bold text-2xl mb-2">ÁO POLO THUN CÁ SẤU</h3>
-            <p className="text-white uppercase mb-4">MỀM MỊN - CO GIÃN - THOÁNG MÁT</p>
-            <Link href="/products/ao-polo">
-              <Button className="bg-[#e52629] text-white hover:bg-[#c81f22] rounded-none w-32 button-press">
-                XEM TẤT CẢ
-              </Button>
-            </Link>
-          </div>
+      {/* Thời trang Nam Nữ */}
+      <div className={`mb-8 ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '0.9s'}}>
+        <h2 className="text-xl font-bold my-4 uppercase">THỜI TRANG NAM NỮ</h2>
+        
+        {/* Tabs for Gender */}
+        <div className="flex mb-6">
+          <div className="bg-[#e52629] text-white px-4 py-2 rounded-lg">Đồ đôi</div>
+          <div className="px-4 py-2 ml-2 cursor-pointer hover:bg-gray-100 transition-colors">Thời trang Nam</div>
+          <div className="px-4 py-2 ml-2 cursor-pointer hover:bg-gray-100 transition-colors">Thời trang Nữ</div>
         </div>
         
-        <div className="relative h-60 overflow-hidden rounded-md hover-lift">
-          <img 
-            src="https://gavani.vn/images/cms/ao-thun-cotton-may-min.jpg" 
-            alt="Áo thun cotton" 
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-          <div className="absolute inset-0 flex flex-col justify-center p-8 bg-gradient-to-r from-black/40 to-transparent">
-            <h3 className="text-white font-bold text-2xl mb-2">ÁO THUN COTTON</h3>
-            <p className="text-white uppercase mb-4">MỀM MỊN - CO GIÃN - THOÁNG MÁT</p>
-            <Link href="/products/ao-thun">
-              <Button className="bg-[#e52629] text-white hover:bg-[#c81f22] rounded-none w-32 button-press">
-                XEM TẤT CẢ
+        {/* Products Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+          {thoiTrangNamNuProducts.map((product, index) => (
+            <div 
+              key={product.id} 
+              className={`border border-gray-200 rounded-lg overflow-hidden relative group hover-lift stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`}
+              style={{animationDelay: `${1.0 + index * 0.1}s`}}
+            >
+              {/* Discount Badge */}
+              <div className="absolute top-2 left-2 w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center z-10 text-sm font-bold pulse">
+                {product.discount}
+              </div>
+              
+              {/* Product Image */}
+              <div className="relative overflow-hidden">
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                
+                {/* Gavani Watermark */}
+                <div className="absolute top-2 right-2">
+                  <img src="https://gavani.vn/images/gavani_trademark.png" alt="Gavani" className="w-16" />
+                </div>
+                
+                {/* Add to Cart Button */}
+                <div className="absolute right-2 bottom-2">
+                  <Link href={`/products/${product.id}`}>
+                    <button className="w-10 h-10 rounded-full bg-[#e52629] flex items-center justify-center text-white button-press transform transition-transform hover:scale-110">
+                      <FiShoppingBag size={18} />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Product Info */}
+              <div className="p-2">
+                <div className="flex items-center mb-1">
+                  {Array(product.rating).fill(0).map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                  <span className="text-xs text-gray-600 ml-1">{product.rating} ({product.sales} bán)</span>
+                </div>
+                
+                <h3 className="text-xs font-medium mb-1 line-clamp-2">{product.name}</h3>
+                
+                <div className="flex items-center justify-between">
+                  <div className="text-[#e52629] font-bold">{product.price.toLocaleString()}₫</div>
+                  <div className="text-gray-400 line-through text-xs">{product.originalPrice.toLocaleString()}₫</div>
+                </div>
+                
+                {/* Color Options */}
+                <div className="flex mt-2 gap-1">
+                  {product.colors.map((color, i) => (
+                    <div key={i} className={`w-5 h-5 rounded-full bg-${color} border border-gray-300`}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* View All Button */}
+        <div className="flex justify-center mb-8">
+          <Link href="/products">
+            <Button 
+              variant="outline" 
+              className="rounded-full border-[#e52629] text-[#e52629] hover:bg-[#e52629] hover:text-white py-1 px-8 button-press"
+            >
+              Xem tất cả
+            </Button>
+          </Link>
+        </div>
+      </div>
+      
+      {/* Product Categories Circular Icons */}
+      <h2 className={`text-xl font-bold my-4 text-center sm:text-left uppercase ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '1.2s'}}>
+        DANH MỤC SẢN PHẨM
+      </h2>
+      
+      <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {[
+          { path: "/products/ao-khoac-nu", img: "ao_khoac_nu.png", name: "ÁO KHOÁC NỮ" },
+          { path: "/products/ao-khoac-nam", img: "ao_khoac_nam.png", name: "ÁO KHOÁC NAM" },
+          { path: "/products/ao-khoac-doi", img: "ao_khoac_doi.png", name: "ÁO KHOÁC ĐÔI" },
+          { path: "/products/ao-thun-nu", img: "ao_thun_nu.png", name: "ÁO THUN NỮ" },
+          { path: "/products/ao-thun-nam", img: "ao_thun_nam.png", name: "ÁO THUN NAM" },
+          { path: "/products/ao-thun-doi", img: "ao_thun_doi.png", name: "ÁO THUN ĐÔI" },
+          { path: "/products/ao-thun-polo-nu", img: "ao_polo_nu.png", name: "ÁO THUN POLO NỮ" },
+          { path: "/products/ao-polo-nam", img: "ao_polo_nam.png", name: "ÁO POLO NAM" },
+          { path: "/products/ao-polo-doi", img: "ao_polo_doi.png", name: "ÁO POLO ĐÔI" },
+        ].map((item, index) => (
+          <Link 
+            key={index}
+            href={item.path} 
+            className={`text-center stagger-item hover-lift ${isLoaded ? 'fade-in-up' : 'opacity-0'}`}
+            style={{animationDelay: `${1.3 + index * 0.05}s`}}
+          >
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#e8793b] flex items-center justify-center mx-auto overflow-hidden">
+              <img 
+                src={`https://gavani.vn/images/2023/06/${item.img}`} 
+                alt={item.name} 
+                className="w-14 h-14 sm:w-16 sm:h-16"
+              />
+            </div>
+            <p className="text-xs mt-2">{item.name}</p>
+          </Link>
+        ))}
+      </div>
+      
+      {/* Store System Banner */}
+      <div className={`w-full h-56 sm:h-80 mb-8 relative rounded-lg overflow-hidden ${isLoaded ? 'scale-in' : 'opacity-0'}`} style={{animationDelay: '1.4s'}}>
+        <img 
+          src="https://gavani.vn/images/2023/06/he_thong_cua_hang_gavani_1.jpg" 
+          alt="Hệ thống cửa hàng GAVANI" 
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/30 flex flex-col items-center justify-center text-white">
+          <h2 className="text-2xl sm:text-4xl font-bold mb-2">HỆ THỐNG CỬA HÀNG GAVANI</h2>
+          <div className="flex gap-2 items-center mt-4">
+            <span className="text-sm">&lt;&lt;&lt;</span>
+            <Link href="/he-thong-cua-hang">
+              <Button 
+                variant="outline" 
+                className="bg-transparent text-white border-white hover:bg-white hover:text-black button-press"
+              >
+                XEM NGAY
               </Button>
             </Link>
+            <span className="text-sm">&gt;&gt;&gt;</span>
           </div>
         </div>
+      </div>
+      
+      {/* Online Channels */}
+      <h2 className={`text-xl font-bold mb-6 uppercase ${isLoaded ? 'fade-in-up' : 'opacity-0'}`} style={{animationDelay: '1.5s'}}>
+        CÁC KÊNH ONLINE GAVANI
+      </h2>
+      <div className="flex flex-wrap justify-center md:justify-between gap-8 mb-12">
+        {[
+          { href: "https://shopee.vn/gavani.vn", icon: <SiShopee className="w-full h-full text-[#ee4d2d]" /> },
+          { href: "https://www.lazada.vn/shop/gavani", icon: <FaLaptopCode className="w-full h-full text-[#0f146c]" /> },
+          { href: "https://www.facebook.com/gavani.vn", icon: <FaFacebookF className="w-3/4 h-3/4 text-[#1877f2]" /> },
+          { href: "https://www.tiktok.com/@gavani.vn", icon: <FaTiktok className="w-3/4 h-3/4 text-black" /> },
+        ].map((item, index) => (
+          <Link 
+            key={index}
+            href={item.href} 
+            target="_blank" 
+            className={`flex items-center justify-center stagger-item ${isLoaded ? 'fade-in' : 'opacity-0'}`}
+            style={{animationDelay: `${1.6 + 0.1 * index}s`}}
+          >
+            <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center hover-scale">
+              {item.icon}
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );
