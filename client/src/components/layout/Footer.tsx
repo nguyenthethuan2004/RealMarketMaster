@@ -39,12 +39,13 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-bold mb-4">Dịch vụ</h3>
+            <h3 className="text-lg font-bold mb-4">Danh mục sản phẩm</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><Link href="/products/online-marketing" className="hover:text-white">Tiếp thị online</Link></li>
-              <li><Link href="/products/design" className="hover:text-white">Thiết kế quảng cáo</Link></li>
-              <li><Link href="/products/analytics" className="hover:text-white">Phân tích dữ liệu</Link></li>
-              <li><Link href="/products/consulting" className="hover:text-white">Tư vấn chiến lược</Link></li>
+              <li><Link href="/products/ao-nam" className="hover:text-white">Áo Nam</Link></li>
+              <li><Link href="/products/quan-nam" className="hover:text-white">Quần Nam</Link></li>
+              <li><Link href="/products/ao-nu" className="hover:text-white">Áo Nữ</Link></li>
+              <li><Link href="/products/quan-nu" className="hover:text-white">Quần Nữ</Link></li>
+              <li><Link href="/products/phu-kien" className="hover:text-white">Phụ kiện</Link></li>
             </ul>
           </div>
           

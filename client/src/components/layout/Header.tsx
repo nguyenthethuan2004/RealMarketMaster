@@ -84,10 +84,11 @@ export function Header() {
               </div>
               
               <div className="absolute left-0 top-full w-64 bg-white shadow-lg rounded-b-lg hidden group-hover:block z-10">
-                <Link href="/products/online-marketing" className="block px-4 py-2 hover:bg-gray-100">Dịch vụ tiếp thị online</Link>
-                <Link href="/products/advertising" className="block px-4 py-2 hover:bg-gray-100">Vật phẩm quảng cáo</Link>
-                <Link href="/products/design" className="block px-4 py-2 hover:bg-gray-100">Thiết kế quảng cáo</Link>
-                <Link href="/products/analytics" className="block px-4 py-2 hover:bg-gray-100">Công cụ phân tích</Link>
+                <Link href="/products/ao-nam" className="block px-4 py-2 hover:bg-gray-100">Áo Nam</Link>
+                <Link href="/products/quan-nam" className="block px-4 py-2 hover:bg-gray-100">Quần Nam</Link>
+                <Link href="/products/ao-nu" className="block px-4 py-2 hover:bg-gray-100">Áo Nữ</Link>
+                <Link href="/products/quan-nu" className="block px-4 py-2 hover:bg-gray-100">Quần Nữ</Link>
+                <Link href="/products/phu-kien" className="block px-4 py-2 hover:bg-gray-100">Phụ kiện</Link>
               </div>
             </div>
             
@@ -102,7 +103,7 @@ export function Header() {
               </Link>
               <Link href="/user-guide" className="inline-flex items-center px-3 py-1 hover:bg-primary/80">
                 <i className="fas fa-question-circle mr-2"></i>
-                <span>Hướng dẫn sử dụng</span>
+                <span>Hướng dẫn mua hàng</span>
               </Link>
               <Link href="/member-policy" className="inline-flex items-center px-3 py-1 hover:bg-primary/80">
                 <i className="fas fa-user-tag mr-2"></i>
