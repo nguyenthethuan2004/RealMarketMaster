@@ -76,9 +76,9 @@ export default function Home() {
         </div>
       </div>
       
+      {/* Product Categories Circular Icons */}
       <h2 className="text-xl font-bold my-4 text-center sm:text-left uppercase">DANH MỤC SẢN PHẨM</h2>
       
-      {/* Product Categories Circular Icons */}
       <div className="flex flex-wrap justify-center gap-4 mb-8">
         <Link href="/products/ao-khoac-nu" className="text-center">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#e8793b] flex items-center justify-center mx-auto overflow-hidden">
@@ -161,6 +161,34 @@ export default function Home() {
             <span className="text-sm">&gt;&gt;&gt;</span>
           </div>
         </div>
+      </div>
+      
+      {/* Online Channels */}
+      <h2 className="text-xl font-bold mb-6 uppercase">CÁC KÊNH ONLINE GAVANI</h2>
+      <div className="flex flex-wrap justify-center md:justify-between gap-8 mb-12">
+        <Link href="https://shopee.vn/gavani.vn" target="_blank" className="flex items-center justify-center">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+            <SiShopee className="w-full h-full text-[#ee4d2d]" />
+          </div>
+        </Link>
+        
+        <Link href="https://www.lazada.vn/shop/gavani" target="_blank" className="flex items-center justify-center">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+            <FaLaptopCode className="w-full h-full text-[#0f146c]" />
+          </div>
+        </Link>
+        
+        <Link href="https://www.facebook.com/gavani.vn" target="_blank" className="flex items-center justify-center">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+            <FaFacebookF className="w-3/4 h-3/4 text-[#1877f2]" />
+          </div>
+        </Link>
+        
+        <Link href="https://www.tiktok.com/@gavani.vn" target="_blank" className="flex items-center justify-center">
+          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
+            <FaTiktok className="w-3/4 h-3/4 text-black" />
+          </div>
+        </Link>
       </div>
       
       {/* Deal Section with Promo Banner */}
@@ -456,6 +484,15 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* View All Button */}
+          <div className="flex justify-center">
+            <Link href="/products">
+              <Button variant="outline" className="rounded-full border-[#e52629] text-[#e52629] hover:bg-[#e52629] hover:text-white py-1 px-8">
+                Xem tất cả
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
       
@@ -667,34 +704,6 @@ export default function Home() {
             </Button>
           </Link>
         </div>
-      </div>
-      
-      {/* Online Channels */}
-      <h2 className="text-xl font-bold mb-6 uppercase">CÁC KÊNH ONLINE GAVANI</h2>
-      <div className="flex flex-wrap justify-center md:justify-between gap-8 mb-12">
-        <Link href="https://shopee.vn/gavani.vn" target="_blank" className="flex items-center justify-center">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
-            <SiShopee className="w-full h-full text-[#ee4d2d]" />
-          </div>
-        </Link>
-        
-        <Link href="https://www.lazada.vn/shop/gavani" target="_blank" className="flex items-center justify-center">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
-            <FaLaptopCode className="w-full h-full text-[#0f146c]" />
-          </div>
-        </Link>
-        
-        <Link href="https://www.facebook.com/gavani.vn" target="_blank" className="flex items-center justify-center">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
-            <FaFacebookF className="w-3/4 h-3/4 text-[#1877f2]" />
-          </div>
-        </Link>
-        
-        <Link href="https://www.tiktok.com/@gavani.vn" target="_blank" className="flex items-center justify-center">
-          <div className="w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center">
-            <FaTiktok className="w-3/4 h-3/4 text-black" />
-          </div>
-        </Link>
       </div>
       
       {/* Promo Banner Section */}
